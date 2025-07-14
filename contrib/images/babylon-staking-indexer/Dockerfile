@@ -31,7 +31,7 @@ RUN LDFLAGS='-extldflags "-static" -v' \
     make build
 
 # Final minimal image with binary only
-FROM alpine:3.16 as run
+FROM alpine:3.21.3 as run
 
 RUN addgroup --gid 1138 -S babylon-staking-indexer && adduser --uid 1138 -S babylon-staking-indexer -G babylon-staking-indexer
 RUN apk add bash curl jq
